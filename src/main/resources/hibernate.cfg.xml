@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://172.232.195.43:3306?user=gladsaxe&amp;password=kopernicus&amp;database=anders</property>
+        <!-- <property name="hibernate.connection.url">jdbc:mysql://uranus.heerfordt.dk:3306?user=gladsaxe&amp;password=kopernicus&amp;database=anders</property> -->
+        <property name="hibernate.connection.username">gladsaxe</property>
+        <property name="hibernate.connection.password">kopernicus</property>
+        <property name="hibernate.connection.database">anders</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="show_sql">false</property>
+
+        <mapping class="com.anders.Nutrient"/>
+        <mapping class="com.anders.Reference"/>
+        <mapping class="com.anders.Effect"/>
+        <mapping class="com.anders.Dose"/>
+    </session-factory>
+
+
+</hibernate-configuration>
