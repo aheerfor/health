@@ -42,16 +42,15 @@ public class EffectScreen {
         TextField causeText = new TextField();
         grid.add(causeText, 1, 1);
 
+        Label relationLabel = new Label("Relation:");
+        grid.add(relationLabel, 0, 2);
+        TextField relationText = new TextField();
+        grid.add(relationText, 1, 2);
 
         Label effectlabel = new Label("Effect:");
-        grid.add(effectlabel, 0, 2);
+        grid.add(effectlabel, 0, 3);
         TextField effectText = new TextField();
-        grid.add(effectText, 1, 2);
-
-        Label relationLabel = new Label("Relation:");
-        grid.add(relationLabel, 0, 3);
-        TextField relationText = new TextField();
-        grid.add(relationText, 1, 3);
+        grid.add(effectText, 1, 3);
 
         Label referenceLabel = new Label("Reference:");
         grid.add(referenceLabel, 0, 4);
@@ -67,6 +66,37 @@ public class EffectScreen {
 
         final Text actiontarget = new Text();
         grid.add(actiontarget, 1, 6);
+
+        causeText.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                checkCH(causeText);
+            }
+
+        });
+        relationText.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                checkCH(relationText);
+            }
+
+        });
+        effectText.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                checkCH(effectText);
+            }
+
+        });
+        referenceText.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                checkCH(referenceText);
+            }
+
+        });
+
+
 
         btn.setOnAction(new EventHandler<ActionEvent>() { //SAVE
 
@@ -89,6 +119,10 @@ public class EffectScreen {
                     pos = 2;
                     //String coinname = coinBox.getText().trim();
                     pos = 3;
+                    checkCH(causeText);
+                    checkCH(effectText);
+                    checkCH(relationText);
+                    checkCH(referenceText);
                     String cause = causeText.getText().trim();
                     pos = 4;
                     String effect = effectText.getText().trim();
@@ -145,6 +179,16 @@ public class EffectScreen {
         //primaryStage.setScene(new Scene(root, 300, 275));
         //primaryStage.setScene(scene);
         //primaryStage.show();
+    }
+
+    public static void checkCH(TextField tf) {
+        String s = tf.getText();
+        if (s.startsWith("CH")) {
+            logger.error("<"+s+ ">");
+            Breaker.breaker();
+            s = s.substring(2);
+            tf.setText(s);
+        }
     }
 
 }

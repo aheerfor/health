@@ -103,16 +103,7 @@ public class NewNutrientScreen {
                     pos = 7;
                     Nutrient w2 = new Nutrient();
                     w2.name = nutrientName;
-                    try {
-                        w2.dailygrams = new Double(doseText.getText().trim());
-                    } catch (Exception e2) {
-                        Alert alert = new Alert(Alert.AlertType.WARNING);
-                        alert.setTitle("Error");
-                        alert.setHeaderText("Error.");
-                        alert.setContentText("Bad number format");
-                        alert.showAndWait();
-
-                    }
+                    w2.dailygrams = DateTimeUtil.TextFieldToDouble(doseText);
                     w2.save();
 
 

@@ -15,6 +15,8 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import org.apache.log4j.Logger;
 
+import static com.anders.EffectScreen.checkCH;
+
 //import static anders.DateTimeUtil.now;
 
 public class DoseScreen {
@@ -73,6 +75,46 @@ public class DoseScreen {
         final Text actiontarget = new Text();
         grid.add(actiontarget, 1, 6);
 
+        nutrientText.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                checkCH(nutrientText);
+            }
+
+        });
+
+        commentText.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                checkCH(commentText);
+            }
+
+        });
+
+        minText.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                checkCH(minText);
+            }
+
+        });
+
+        maxText.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                checkCH(maxText);
+            }
+
+        });
+
+        refText.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                checkCH(refText);
+            }
+
+        });
+
         btn.setOnAction(new EventHandler<ActionEvent>() { //SAVE
 
             @Override
@@ -100,8 +142,8 @@ public class DoseScreen {
 
                     String ref = refText.getText().trim();
 
-                    Double min = DateTimeUtil.textToDouble(minText.getText().trim());
-                    Double max = DateTimeUtil.textToDouble(maxText.getText().trim());
+                    Double min = DateTimeUtil.TextFieldToDouble(minText);
+                    Double max = DateTimeUtil.TextFieldToDouble(maxText);
 
 
                     pos = 7;
@@ -138,7 +180,7 @@ public class DoseScreen {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Saved");
                     alert.setHeaderText("Saved.");
-                    alert.setContentText("Reference saved");
+                    alert.setContentText("Dose saved");
                     alert.showAndWait();
                 } catch(Exception ex) {
                     logger.trace("StartWallet-hndle "+ex+ " pos="+pos);

@@ -1,6 +1,7 @@
 package com.anders;
 
 import javafx.scene.control.Alert;
+import javafx.scene.control.TextField;
 import org.apache.log4j.Logger;
 
 import java.time.Instant;
@@ -76,6 +77,17 @@ public class DateTimeUtil {
 
     public static Instant now() {
         return Instant.now().truncatedTo(ChronoUnit.SECONDS);
+    }
+
+    public static Double TextFieldToDouble(TextField tf) {
+        try {
+            String s = tf.getText().trim();
+            Double d = Double.parseDouble(s);
+            return d;
+        } catch (Exception e) {
+
+        }
+        return 0.0;
     }
 
 

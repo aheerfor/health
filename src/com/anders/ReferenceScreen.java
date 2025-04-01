@@ -15,6 +15,8 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import org.apache.log4j.Logger;
 
+import static com.anders.EffectScreen.checkCH;
+
 //import static anders.DateTimeUtil.now;
 
 public class ReferenceScreen {
@@ -63,6 +65,27 @@ public class ReferenceScreen {
         final Text actiontarget = new Text();
         grid.add(actiontarget, 1, 6);
 
+        authorText.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                checkCH(authorText);
+            }
+
+            });
+        titleText.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                checkCH(titleText);
+            }
+
+        });
+        addressText.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                checkCH(addressText);
+            }
+
+        });
         btn.setOnAction(new EventHandler<ActionEvent>() { //SAVE
 
             @Override
@@ -89,7 +112,9 @@ public class ReferenceScreen {
                     String author = authorText.getText().trim();
                     String webaddress = addressText.getText().trim();
 
-
+                    checkCH(authorText);
+                    checkCH(titleText);
+                    checkCH(addressText);
                     pos = 7;
                     Reference w2 = new Reference();
                     w2.webaddress = webaddress;
