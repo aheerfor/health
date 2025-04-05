@@ -30,6 +30,10 @@ public class Effect implements Serializable {
     String relation;
     String reference;
 
+    static int effect_size = 45;
+    static int cause_size = 45;
+    static int relation_size = 45;
+    static int reference_size = 100;
     public void save() {
         try {
             if (reference.length()>100) {

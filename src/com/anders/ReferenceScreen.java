@@ -68,21 +68,21 @@ public class ReferenceScreen {
         authorText.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                checkCH(authorText);
+                checkCH(authorText,45);
             }
 
             });
         titleText.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                checkCH(titleText);
+                checkCH(titleText,100);
             }
 
         });
         addressText.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                checkCH(addressText);
+                checkCH(addressText,100);
             }
 
         });
@@ -112,9 +112,9 @@ public class ReferenceScreen {
                     String author = authorText.getText().trim();
                     String webaddress = addressText.getText().trim();
 
-                    checkCH(authorText);
-                    checkCH(titleText);
-                    checkCH(addressText);
+                    checkCH(authorText,45);
+                    checkCH(titleText,100);
+                    checkCH(addressText,100);
                     pos = 7;
                     Reference w2 = new Reference();
                     w2.webaddress = webaddress;

@@ -78,7 +78,7 @@ public class DoseScreen {
         nutrientText.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                checkCH(nutrientText);
+                checkCH(nutrientText, 45);
             }
 
         });
@@ -86,7 +86,7 @@ public class DoseScreen {
         commentText.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                checkCH(commentText);
+                checkCH(commentText,45);
             }
 
         });
@@ -94,7 +94,7 @@ public class DoseScreen {
         minText.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                checkCH(minText);
+                checkCH(minText, 45);
             }
 
         });
@@ -102,7 +102,7 @@ public class DoseScreen {
         maxText.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                checkCH(maxText);
+                checkCH(maxText,45);
             }
 
         });
@@ -110,7 +110,7 @@ public class DoseScreen {
         refText.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                checkCH(refText);
+                checkCH(refText, 100);
             }
 
         });

@@ -70,28 +70,28 @@ public class EffectScreen {
         causeText.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                checkCH(causeText);
+                checkCH(causeText, Effect.effect_size);
             }
 
         });
         relationText.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                checkCH(relationText);
+                checkCH(relationText, Effect.relation_size);
             }
 
         });
         effectText.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                checkCH(effectText);
+                checkCH(effectText, Effect.effect_size);
             }
 
         });
         referenceText.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                checkCH(referenceText);
+                checkCH(referenceText, Effect.reference_size);
             }
 
         });
@@ -103,7 +103,15 @@ public class EffectScreen {
             @Override
             public void handle(ActionEvent e) {
                 int pos = 0;
+                boolean too_long = false;
                 try {
+                    too_long |= checkCH(causeText,Effect.cause_size);
+                    too_long |= checkCH(effectText,Effect.effect_size);
+                    too_long |= checkCH(relationText, Effect.relation_size);
+                    too_long |= checkCH(referenceText, Effect.reference_size);
+                    if (too_long) {
+                        return;
+                    }
 
                     if (!DAO.openConnection()) {
                         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -119,10 +127,6 @@ public class EffectScreen {
                     pos = 2;
                     //String coinname = coinBox.getText().trim();
                     pos = 3;
-                    checkCH(causeText);
-                    checkCH(effectText);
-                    checkCH(relationText);
-                    checkCH(referenceText);
                     String cause = causeText.getText().trim();
                     pos = 4;
                     String effect = effectText.getText().trim();
@@ -181,14 +185,21 @@ public class EffectScreen {
         //primaryStage.show();
     }
 
-    public static void checkCH(TextField tf) {
-        String s = tf.getText();
+    public static boolean checkCH(TextField tf, int size) {
+        boolean ret = false;
+        String s = tf.getText().trim();
         if (s.startsWith("CH")) {
             logger.error("<"+s+ ">");
             Breaker.breaker();
-            s = s.substring(2);
+            s = s.substring(2).trim();
             tf.setText(s);
+
         }
+        if (s.length() > size) {
+            Popup.showError("Long "+s);
+            ret = true;
+        }
+        return ret;
     }
 
 }
