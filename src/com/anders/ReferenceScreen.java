@@ -119,6 +119,9 @@ public class ReferenceScreen {
                     Reference w2 = new Reference();
                     w2.webaddress = webaddress;
                     w2.author = author;
+                    if (w2.author.length()>45) {
+                        w2.author = w2.author.substring(0,45);
+                    }
                     w2.title = title;
                     w2.save();
 

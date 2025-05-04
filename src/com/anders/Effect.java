@@ -39,7 +39,9 @@ public class Effect implements Serializable {
             if (reference.length()>100) {
                 reference = reference.substring(0,100);
             }
+            logger.error("Save 1");
             session.save(this);
+            logger.error("Save 2");
         } catch (Exception e) {
             logger.error("Effect.save "+e);
             Breaker.breaker();

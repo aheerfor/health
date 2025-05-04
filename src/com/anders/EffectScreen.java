@@ -104,6 +104,7 @@ public class EffectScreen {
             public void handle(ActionEvent e) {
                 int pos = 0;
                 boolean too_long = false;
+                logger.error("BTN 1");
                 try {
                     too_long |= checkCH(causeText,Effect.cause_size);
                     too_long |= checkCH(effectText,Effect.effect_size);
@@ -122,6 +123,7 @@ public class EffectScreen {
                         //actiontarget.setText("ERROR: same wallet!!");
                         return;
                     }
+                    logger.error("BTN 2");
                     pos = 1;
                     actiontarget.setText("---");
                     pos = 2;
@@ -140,7 +142,9 @@ public class EffectScreen {
                     w2.effect = effect;
                     w2.relation = relation;
                     w2.reference = reference;
+                    logger.error("BTN 3");
                     w2.save();
+                    logger.error("BTN 4");
 
 
                     //double balance = 0;//Double.valueOf(balanceText.getText());
@@ -157,6 +161,7 @@ public class EffectScreen {
                         //actiontarget.setText("ERROR: same wallet!!");
                         return;
                     }
+                    logger.error("BTN 5");
                     pos = 27;
                     //actiontarget.setFill(Color.FIREBRICK);
                     //actiontarget.setText("Saved1");
@@ -175,6 +180,8 @@ public class EffectScreen {
                     logger.trace("StartWallet-hndle "+ex+ " pos="+pos);
                     Breaker.breaker();
                 }
+                logger.error("BTN 6");
+
             }
         });
 

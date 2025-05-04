@@ -17,8 +17,8 @@ public class Main  extends Application {
 
     public static void main(String[] args){
 
-        System.out.println("Hello, World!");
-        Main m = new Main();
+        //System.out.println("Hello, World!");
+        //Main m = new Main();
         StandardServiceRegistryBuilder standardServiceRegistryBuilder =
                 new StandardServiceRegistryBuilder();
 
