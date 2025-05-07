@@ -92,7 +92,7 @@ public class ReferenceScreen {
             public void handle(ActionEvent e) {
                 int pos = 0;
                 try {
-
+                    btn.setDisable(true);
                     if (!DAO.openConnection()) {
                         Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setTitle("Error");
@@ -146,15 +146,12 @@ public class ReferenceScreen {
                     addressText.clear();
                     authorText.clear();
                     titleText.clear();
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Saved");
-                    alert.setHeaderText("Saved.");
-                    alert.setContentText("Reference saved");
-                    alert.showAndWait();
                 } catch(Exception ex) {
                     logger.trace("StartWallet-hndle "+ex+ " pos="+pos);
                     Breaker.breaker();
                 }
+                btn.setDisable(false);
+
             }
         });
 

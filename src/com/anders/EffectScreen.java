@@ -105,6 +105,7 @@ public class EffectScreen {
                 int pos = 0;
                 boolean too_long = false;
                 logger.error("BTN 1");
+                btn.setDisable(true);
                 try {
                     too_long |= checkCH(causeText,Effect.cause_size);
                     too_long |= checkCH(effectText,Effect.effect_size);
@@ -181,6 +182,7 @@ public class EffectScreen {
                     Breaker.breaker();
                 }
                 logger.error("BTN 6");
+                btn.setDisable(false);
 
             }
         });

@@ -136,4 +136,10 @@ public class DAO {
         getSessionFactory().close();
     }
 
+    public static String cut(String x, int n) {
+        String ret = x;
+        if (ret.length() <= n) return x;
+        return x.substring(0,n);
+    }
+
 }

@@ -38,6 +38,10 @@ public class Reference implements Serializable {
 
     public void save() {
         try {
+            webaddress = DAO.cut(webaddress,100);
+            title = DAO.cut(title,100);
+            author = DAO.cut(author,45);
+
             session.save(this);
         } catch (Exception e) {
             logger.error("Nutrient.save "+e);
