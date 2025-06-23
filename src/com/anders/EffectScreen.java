@@ -112,6 +112,7 @@ public class EffectScreen {
                     too_long |= checkCH(relationText, Effect.relation_size);
                     too_long |= checkCH(referenceText, Effect.reference_size);
                     if (too_long) {
+                        btn.setDisable(false);
                         return;
                     }
 
@@ -122,6 +123,7 @@ public class EffectScreen {
                         alert.setContentText("Transaction mismatch-2");
                         alert.showAndWait();
                         //actiontarget.setText("ERROR: same wallet!!");
+                        btn.setDisable(false);
                         return;
                     }
                     logger.error("BTN 2");
@@ -160,6 +162,7 @@ public class EffectScreen {
                         alert.setContentText("Transaction mismatch-2B");
                         alert.showAndWait();
                         //actiontarget.setText("ERROR: same wallet!!");
+                        btn.setDisable(false);
                         return;
                     }
                     logger.error("BTN 5");
