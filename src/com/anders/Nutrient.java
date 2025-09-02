@@ -1,4 +1,4 @@
-package com.anders;
+package anders;
 
 import org.apache.log4j.Logger;
 
@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 import java.io.Serializable;
 
-import static com.anders.DAO.session;
+import static anders.DAO.session;
 
 @Entity
 @Table(name = "anders.nutrient")

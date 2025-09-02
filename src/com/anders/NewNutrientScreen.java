@@ -1,4 +1,4 @@
-package com.anders;
+package anders;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

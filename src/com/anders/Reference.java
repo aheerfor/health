@@ -1,4 +1,4 @@
-package com.anders;
+package anders;
 
 import org.apache.log4j.Logger;
 
@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import static com.anders.DAO.session;
+import static anders.DAO.session;
 
 
 import javax.persistence.*;

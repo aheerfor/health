@@ -1,4 +1,4 @@
-package com.anders;
+package anders;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;

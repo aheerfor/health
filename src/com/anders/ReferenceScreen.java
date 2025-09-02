@@ -1,4 +1,4 @@
-package com.anders;
+package anders;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -15,7 +15,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import org.apache.log4j.Logger;
 
-import static com.anders.EffectScreen.checkCH;
+import static anders.EffectScreen.checkCH;
 
 //import static anders.DateTimeUtil.now;
 
