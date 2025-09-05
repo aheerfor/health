@@ -10,6 +10,7 @@ import static anders.DAO.session;
 @Entity
 @Table(name = "anders.dose")
 
+
 @NamedQueries(
         {
                 @NamedQuery(
