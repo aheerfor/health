@@ -18,6 +18,7 @@ import org.apache.log4j.Logger;
 //import static anders.DateTimeUtil.now;
 
 public class EffectScreen {
+    public  static TextField referenceText = new TextField();;
     private static final Logger logger = Logger.getLogger(EffectScreen.class.getName());
 
     public static void startEffect(GridPane grid) throws Exception{
@@ -54,7 +55,6 @@ public class EffectScreen {
 
         Label referenceLabel = new Label("Reference:");
         grid.add(referenceLabel, 0, 4);
-        TextField referenceText = new TextField();
         grid.add(referenceText, 1, 4);
 
         Button btn = new Button("Save");

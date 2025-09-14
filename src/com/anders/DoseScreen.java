@@ -20,6 +20,8 @@ import static anders.EffectScreen.checkCH;
 //import static anders.DateTimeUtil.now;
 
 public class DoseScreen {
+    public static TextField refText = new TextField();
+
     private static final Logger logger = Logger.getLogger(DoseScreen.class.getName());
 
     public static void startDose(GridPane grid) throws Exception{
@@ -62,7 +64,6 @@ public class DoseScreen {
 
         Label refLabel = new Label("Reference:");
         grid.add(refLabel, 0, 5);
-        TextField refText = new TextField();
         grid.add(refText, 1, 5);
 
         Button btn = new Button("Save");
@@ -121,6 +122,9 @@ public class DoseScreen {
             public void handle(ActionEvent e) {
                 int pos = 0;
                 try {
+                    checkCH(nutrientText,100);
+                    checkCH(commentText,100);
+                    checkCH(refText,100);
 
                     if (!DAO.openConnection()) {
                         Alert alert = new Alert(Alert.AlertType.ERROR);

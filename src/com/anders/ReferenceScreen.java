@@ -21,6 +21,7 @@ import static anders.EffectScreen.checkCH;
 
 public class ReferenceScreen {
     private static final Logger logger = Logger.getLogger(ReferenceScreen.class.getName());
+    public static TextField titleText = new TextField();
 
     public static void startReference(GridPane grid) throws Exception{
         //Parent root = FXMLLoader.load(getClass().getResource("../sample.fxml"));
@@ -41,7 +42,6 @@ public class ReferenceScreen {
 
         Label titleLabel = new Label("Title:");
         grid.add(titleLabel, 0, 1);
-        TextField titleText = new TextField();
         grid.add(titleText, 1, 1);
 
 
@@ -92,6 +92,9 @@ public class ReferenceScreen {
             public void handle(ActionEvent e) {
                 int pos = 0;
                 try {
+                    checkCH(authorText,45);
+                    checkCH(titleText,100);
+                    checkCH(addressText,100);
                     btn.setDisable(true);
                     if (!DAO.openConnection()) {
                         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -112,9 +115,8 @@ public class ReferenceScreen {
                     String author = authorText.getText().trim();
                     String webaddress = addressText.getText().trim();
 
-                    checkCH(authorText,45);
-                    checkCH(titleText,100);
-                    checkCH(addressText,100);
+                    DoseScreen.refText.setText(titleText.getText());
+                    EffectScreen.referenceText.setText(titleText.getText());
                     pos = 7;
                     Reference w2 = new Reference();
                     w2.webaddress = webaddress;
