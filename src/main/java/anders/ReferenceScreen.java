@@ -117,6 +117,7 @@ public class ReferenceScreen {
 
                     DoseScreen.refText.setText(titleText.getText());
                     EffectScreen.referenceText.setText(titleText.getText());
+                    EffectScreen.causeText.setText("");
                     pos = 7;
                     Reference w2 = new Reference();
                     w2.webaddress = webaddress;

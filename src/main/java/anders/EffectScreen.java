@@ -19,6 +19,7 @@ import org.apache.log4j.Logger;
 
 public class EffectScreen {
     public  static TextField referenceText = new TextField();;
+    public  static TextField causeText = new TextField();
     private static final Logger logger = Logger.getLogger(EffectScreen.class.getName());
 
     public static void startEffect(GridPane grid) throws Exception{
@@ -40,7 +41,6 @@ public class EffectScreen {
 
         Label causeLabel = new Label("Cause:");
         grid.add(causeLabel, 0, 1);
-        TextField causeText = new TextField();
         grid.add(causeText, 1, 1);
 
         Label relationLabel = new Label("Relation:");

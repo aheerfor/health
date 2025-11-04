@@ -10,8 +10,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DAO {
-    //static Session session = null;
-    //public static CriteriaBuilder builder;
     private static final Logger logger = Logger.getLogger(DAO.class.getName());
     public static final String DB_URL =
             //"jdbc:mysql://uranus.heerfordt.dk:3306/anders";
@@ -53,8 +51,6 @@ public class DAO {
                 }
                 pos = 3;
 
-                //session.get(Coin.class,1);
-                //builder = session.getCriteriaBuilder();
                 return true;
             }
             //logger.trace("Open connection depth = "+depth);
